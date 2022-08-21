@@ -2,13 +2,18 @@
 
 
 
-
 import React from 'react'
+import SinglePokemon from '../features/SinglePokemon/SinglePokemon'
 
 const SinglePokemonPage = () => {
     return (
         <section>
-            This is a single pokemon page
+            {
+                /**
+                 * Reason for this abstraction is the ability to inject more functionality pr. component. E.g. Higher order components. 
+                 */
+            }
+            <SinglePokemon />
         </section>
     )
 }

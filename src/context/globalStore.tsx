@@ -1,9 +1,10 @@
 
 import React, { createContext, useReducer } from 'react'
-import { ActionTypes_GlobalReducer, IGlobalReducerActions, IGlobalReducerState } from '../models/foundation_types'
-import { Namespace_IPokemonOverviewTypes } from '../models/pokemonOverview_types'
+import { ActionTypes_GlobalReducer, IGlobalReducerActions, IGlobalReducerState } from '../shared/models/foundation_types'
+import { Namespace_PokemonOverviewTypes } from '../features/PokemonOverview/pokemonOverview_types'
+import deepClone from '../shared/util/deepClone'
 
-type GlobalReducerStore = Namespace_IPokemonOverviewTypes.IPokemonOverviewTypes | null
+type GlobalReducerStore = Namespace_PokemonOverviewTypes.IPokemonOverviewTypes | null
 type StoreDispatch = (action : IGlobalReducerActions) => void
 
 const GlobalStoreContext = createContext<{store : GlobalReducerStore, dispatchStoreValues : StoreDispatch} | undefined>(undefined!)
@@ -14,8 +15,22 @@ const globalReducer = (store : GlobalReducerStore, action : IGlobalReducerAction
 
     switch(type) {
         case ActionTypes_GlobalReducer.SET_POKEMON_DATA: 
-     
             return store = payload
+
+        case ActionTypes_GlobalReducer.SET_NEW_POKEMON_FAVORITE: 
+            const newStore = deepClone<GlobalReducerStore>(store)
+
+            newStore?.pokemon.map((pokemon : Namespace_PokemonOverviewTypes.Pokemon) => {
+                if (pokemon.pokemon.name === payload) {
+                    pokemon.pokemon.favorite = !pokemon.pokemon.favorite
+                }
+                return pokemon
+            })
+
+            return {
+                ...store,
+                ...newStore
+            }
         default: 
             return store
     }

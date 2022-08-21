@@ -1,7 +1,7 @@
 
 
 
-export declare module Namespace_IPokemonOverviewTypes {
+export declare module Namespace_PokemonOverviewTypes {
 
     export interface DoubleDamageFrom {
         name: string;
@@ -75,6 +75,7 @@ export declare module Namespace_IPokemonOverviewTypes {
     export interface Pokemon2 {
         name: string;
         url: string;
+        favorite?: boolean
     }
 
     export interface Pokemon {

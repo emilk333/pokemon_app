@@ -1,5 +1,6 @@
 
 
+
 const genericFetch = async <T extends {}>(url:string) : Promise<T> => {
 
     const res = await fetch(url).catch(error => {

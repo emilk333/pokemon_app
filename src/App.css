@@ -39,3 +39,49 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+.pat-overview__pokemon-list {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pat-overview__pokemon-list-item {
+  width: 100%;
+  max-width: 200px;
+  padding: 8px 0;
+  background-color: #f9f1e7;
+  border: 1px solid antiquewhite;
+  border-radius: 6px;
+  margin: 5px;
+}
+
+.pat-single-pokemon {
+  background-color: #f9f1e7;
+  border: 1px solid antiquewhite;
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.pat-single-pokemon h1 {
+  font-weight: bold;
+  color: #3a3a3a;
+  font-size: 1.6rem;
+}
+
+.pat-single-pokemon__favorite-button {
+  border: none;
+  background-color: transparent;
+}
+
+.pat-single-pokemon__favorite-button:focus {
+  border: none;
+  background-color: transparent;
+}

@@ -1,22 +1,29 @@
 
 
+import React, { ReactNode } from 'react'
+import { selectedFavoriteIcon, favoriteIcon } from '../../assets/favoritesIcons'
 
 
+interface CardProps<T> {
+    props: T
+}
 
-
-
-
-
-import React from 'react'
-
-
-const CardGrid = ({props} : {props : string}) => {
+const Card = <T extends {}>( {props} : CardProps<T> & { children?: ReactNode }) => {
     return (
         <article>
-            {props}
+            {
+                //@ts-ignore
+                props.displayValue
+            }
+            {
+                //@ts-ignore Find out why this is bugging the linter
+                props.selectedValue ? 
+                    <div dangerouslySetInnerHTML={{__html: selectedFavoriteIcon}}></div> : 
+                    <div dangerouslySetInnerHTML={{__html: favoriteIcon}}></div>
+            }
         </article>
     )
 }
 
 
-export default CardGrid
+export default Card
