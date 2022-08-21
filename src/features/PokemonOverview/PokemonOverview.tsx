@@ -2,7 +2,7 @@
 
 
 
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Card from '../../components/Card/Card'
 import InputField from '../../components/Input/InputField'
 import genericFetch from '../../shared/util/fetch'
@@ -56,7 +56,7 @@ const PokemonOverview = () => {
         return (
             <section>
                 <InputField props={pokemonTypeInputValue} callBack={findPokemonsByType}/>
-                <button onClick={() => fetchPokemonsByType()}>Fetch pokemons!</button>
+                <button className="pat-overview__fetch-pokemon-button" onClick={() => fetchPokemonsByType()}>Fetch pokemons!</button>
                 <div>
                     <ul className="pat-overview__pokemon-list">
                         {context?.store?.pokemon?.length ? renderCardGrid() : ""}

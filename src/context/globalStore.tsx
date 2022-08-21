@@ -36,6 +36,11 @@ const globalReducer = (store : GlobalReducerStore, action : IGlobalReducerAction
     }
 }
 
+/**
+ * 
+ * @param param0 JSX.Element we want to share state to
+ * @returns Provider element which wraps selected child componentry
+ */
 
 const GlobalStoreProvider = ({children} : any) => { //replace any with correct type
 

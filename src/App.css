@@ -82,6 +82,24 @@
 }
 
 .pat-single-pokemon__favorite-button:focus {
-  border: none;
-  background-color: transparent;
+  outline: none
+}
+
+.pat-single-pokemon__favorite-button:focus-within {
+  outline: 3px solid pink
+}
+
+.pat-header a {
+    color: #414383;
+    font-weight: bold;
+}
+
+.pat-overview__fetch-pokemon-button {
+  border: 2px solid #d5d5d5;
+  background-color: #f9f1e7;
+  margin-top: 20px;
+}
+
+.pat-overview__pokemon-list-container {
+  margin-top: 20px;
 }

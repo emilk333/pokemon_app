@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const TheHeader = () => {
     return (
-        <header>
+        <header className="pat-header">
             <Link to="/">Pokemon overview</Link>
         </header>
     )

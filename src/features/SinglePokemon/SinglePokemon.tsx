@@ -54,7 +54,8 @@ const SinglePokemon = () => {
                 <button className="pat-single-pokemon__favorite-button" onClick={() => addToFavorites(pokemonData.name)}>
                     {
                         /**
-                         * This is why you merged data into a single source of truth - you get rid of random select functions from other places in the application
+                         * This is why you merged data into a single source of truth - you get rid of random select functions from other places in the application.
+                         * More so, state is not persisted through reload, which means things crash if you F5
                          */
                     }
                     {
